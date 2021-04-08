@@ -6,6 +6,9 @@ all: start
 docker-all: docker-build docker-start
 	@echo "DONE"
 
+docker-alli: docker-build docker-inter
+	@echo "Done INTER"
+
 docker-build:
 	@echo "building the image from docker file..."
 	docker build --pull -t predict_demo .
