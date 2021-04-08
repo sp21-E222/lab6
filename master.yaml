@@ -15,7 +15,7 @@ paths:
     get:
       tags:
         - PRED
-      operationId: prediction.my_prediction
+      operationId: my_defs.prediction.my_prediction
       description: Returns cpu information of the hosting server
       parameters:
         - in: path
@@ -52,6 +52,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CPU'
+
+  /cpu:
+    get:
+      tags:
+        - CPU
+      operationId: my_defs.cpu_2020.get_processor_name
+      description: Returns cpu information of the hosting server
+      responses:
+        '200':
+          description: 'CPU info, or add more text'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CPU'
+  /os:
+    get:
+      tags:
+        - OS
+      operationId: my_defs.cpu_2020.get_os
+      description: Returns os information of the hosting server
+      responses:
+        '200':
+          description: 'os info, or add more text'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OS'
 
 servers:
   - url: 'http://localhost:8080/'
